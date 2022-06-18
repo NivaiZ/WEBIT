@@ -1,11 +1,12 @@
+const bodySearch = document.querySelector('body');
+
 const modalCloseClickOutside = () => {
     const nav = document.querySelector('.modal');
-    const bodySearch = document.querySelector('body');
     window.addEventListener('click', e => {
         const target = e.target;
-        bodySearch.classList.toggle('js');
-        if (!target.closest('.button-modal__btn') && !target.closest('.modal__inner')) {
+        if (!target.closest('.button-modal__btn') && !target.closest('.modal__wrapper')) {
             nav.classList.remove('modal-visible');
+            bodySearch.classList.remove('js');
         }
     })
 }
@@ -17,6 +18,7 @@ const clickModalOpenFunction = () => {
     const modalVisible = document.querySelector('.modal');
     
     clickButtonModal.addEventListener('click', () => {
+        bodySearch.classList.add('js');
         clickButtonModal.classList.toggle('button-modal--opened');
         modalVisible.classList.add('modal-visible');
     })

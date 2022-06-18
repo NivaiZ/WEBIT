@@ -49,6 +49,7 @@ body {
 
 .modal-visible {
     opacity: 1;
+    pointer-events: unset;
 }
 
 @media (max-width: 800px) {
